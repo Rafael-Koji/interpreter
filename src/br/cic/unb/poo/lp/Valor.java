@@ -1,20 +1,10 @@
 package br.cic.unb.poo.lp;
 
 
-public class Valor extends Expressao {
-
-	private int valor;
+public abstract class Valor extends Expressao {
 	
-	public Valor(int valor){
-		this.valor = valor;
-	}
-	
-	public Expressao avaliar(){
+	@Override
+	public Valor avaliar() {
 		return this;
 	}
-	
-	public int getValor(){
-		return this.valor;
-	}
-		
 }
