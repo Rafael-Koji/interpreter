@@ -5,14 +5,20 @@ import junit.framework.TestCase;
 public class TesteExpressaoSubtracao extends TestCase{
 	
 	public void testSubtracao() {
-		Expressao valor10 = new Valor(10);
-		Expressao valor5 = new Valor(5);
+		try {
+			ValorInteiro valor10 = new ValorInteiro(10);
 		
-		Expressao subtracao = new ExpressaoSubtracao(valor10, valor5);
+			ValorInteiro valor5 = new ValorInteiro(5);
 		
-		Expressao resultado = subtracao.avaliar();
+			Expressao subtracao = new ExpressaoSubtracao(valor10, valor5);
 		
-		assertEquals(5, resultado.getValor());
+			ValorInteiro resultado = (ValorInteiro)subtracao.avaliar();
+		
+			assertEquals(new Integer(5), resultado.getValor());
+		}
+		catch(ErroDeTipo e) {
+			fail();
+		}
 	}
 	
 
